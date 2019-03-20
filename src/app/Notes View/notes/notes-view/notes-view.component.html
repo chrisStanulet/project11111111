@@ -11,6 +11,6 @@
 
 <button mat-button color="accent"  (click)="onNoteCreate()">Add Notes</button>
 
-<div *ngFor="let notes of empList ; let i = index"> 
-  <mat-card>{{empList[i].noteText}}</mat-card>
+<div class="note" *ngFor="let notes of empList ; let i = index"> 
+  <mat-card >{{empList[i].noteText}}</mat-card>
 </div>

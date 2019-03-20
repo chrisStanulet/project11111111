@@ -10,26 +10,26 @@ import { DataService } from './data.service';
 export class NotesComponent implements OnInit {
 
 
-    constructor(dataService: DataService) {  
+    constructor(public dataService: DataService) {  
     }  
  noteLocation1 : string
     Biology(){
       this.noteLocation1 ="Biology"
-      this.dataService.setData(noteLocation1).subscribe((dataService) => {});
+      this.dataService.setData(noteLocation1);
 
     }
     History(){
       this.noteLocation1 ="Histroy"
-      this.dataService.setData(noteLocation1).subscribe((dataService) => {});
+      this.dataService.setData(noteLocation1);
       
     }
     Maths(){
       this.noteLocation1 ="Maths"
-      this.dataService.setData(noteLocation1).subscribe((dataService) => {});
+      this.dataService.setData(noteLocation1);
     }
     English(){
       this.noteLocation1 ="English"
-      this.dataService.setData(noteLocation1).subscribe((dataService) => {});
+      this.dataService.setData(noteLocation1);
     }
 
 

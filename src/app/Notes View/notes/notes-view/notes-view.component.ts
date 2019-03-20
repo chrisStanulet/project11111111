@@ -10,8 +10,8 @@ import {DataService} from '../data.service'
 })
 export class NotesViewComponent  {
 
-  constructor(_dataService: DataService) {   
-    this.noteLocation = _dataService.getData();  
+  constructor(dataService: DataService) {   
+    this.noteLocation = dataService.getData();  
   }  
     noteLocation :string ;
     noteText : string;

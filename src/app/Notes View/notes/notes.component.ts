@@ -18,7 +18,7 @@ export class NotesComponent implements OnInit {
 
     Biology(){
       this.noteLocation1 ="Biology"
-         this.dataService.setData().then(students => this.noteLocation1 = noteLocation1);
+         this.dataService.setData().then(noteLocation1 => this.noteLocation1 = noteLocation1);
 
     }
     History(){

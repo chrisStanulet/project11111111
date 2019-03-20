@@ -10,14 +10,15 @@ import { DataService } from './data.service' ;
 export class NotesComponent implements OnInit {
 
  noteLocation1 : string
-    constructor(_dataService: DataService) {  
+    constructor(dataService: DataService) {  
 
-        _dataService.setData(this.noteLocation1);  
+
 
     }  
 
     Biology(){
       this.noteLocation1 ="Biology"
+         this.dataService.setData().then(students => this.noteLocation1 = noteLocation1);
 
     }
     History(){

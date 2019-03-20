@@ -1,0 +1,40 @@
+
+p {
+  font-family: Lato;
+}
+.filler{
+  flex: 1 1 auto;
+}
+.header{
+  position: absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  Right:0;
+
+  
+}
+.editButtons{
+margin-left: 5px;
+}
+
+mat-sidenav {
+  width: 10%;
+}
+ .sidenav{
+   position: absolute;
+  top: 60px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  
+ }
+
+ .navButtons {
+
+   height: 13%;
+   width: 99%;
+   word-wrap:break-word;
+   border-bottom: 3px solid #424242;
+  border-top: 3px solid #424242;
+ }

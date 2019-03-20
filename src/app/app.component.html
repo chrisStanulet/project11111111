@@ -1,9 +1,9 @@
 
-<mat-toolbar class="header" color="primary">
-  Project Name!!1!
+<mat-toolbar class="header">
+  <img src="https://icons-for-free.com/free-icons/png/512/1891018.png" alt="SnapNote" width="48"/>
   <div class="filler"></div>
-    <button mat-mini-fab color="accent" class="editButtons" (click)="openBottomSheet()" ></button><!-- add -->
-    <button mat-mini-fab color="accent" class="editButtons" ></button><!-- delete -->
+    <button mat-mini-fab color="accent" matTooltip="Edit" class="editButtons" (click)="openBottomSheet()" ></button><!-- add -->
+    <button mat-mini-fab color="accent" matTooltip="Remove Marked" class="editButtons" ></button><!-- delete -->
     <!--<button mat-mini-fab color="accent" class="editButtons" ></button>-->
 </mat-toolbar>
 
@@ -11,9 +11,9 @@
   <mat-sidenav  mode="side" opened>
 
     <!-- Nav buttons -->
-    <button mat-flat-button class ="navButtons" color='accent'[routerLink]="['/home']">Home Page </button>
+    <button mat-flat-button class ="navButtons" matTooltip="Home Page" color='accent'[routerLink]="['/home']"><img src="https://image.flaticon.com/icons/png/512/63/63272.png" alt="test" width="80"/></button>
     <br>
-     <button mat-flat-button class="navButtons" color='accent'[routerLink]="['/notes']">Note button </button>
+     <button mat-flat-button class="navButtons" matTooltip="Notes" color='accent'[routerLink]="['/notes']"><img src="https://cdn2.iconfinder.com/data/icons/flatline-512-mono/512/note_data-512.png" alt="test" width="60"/></button>
   
   </mat-sidenav>
   <mat-sidenav-content>

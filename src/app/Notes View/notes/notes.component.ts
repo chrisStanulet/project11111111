@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import {DataService} from './data.service'
+import { DataService } from './data.service' ;
 
 
 @Component({
@@ -12,7 +12,7 @@ export class NotesComponent implements OnInit {
  noteLocation1 : string
     constructor(_dataService: DataService) {  
 
-        _dataService.setData( this.noteLocation1);  
+        _dataService.setData(this.noteLocation1);  
 
     }  
 

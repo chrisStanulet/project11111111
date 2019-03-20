@@ -12,7 +12,7 @@ export class NotesViewComponent  {
 
   constructor(_dataService: DataService) {  
     debugger;  
-    this.noteLocation = _dataService.getOption();  
+    this.noteLocation = _dataService.getData();  
   }  
     noteLocation :string ;
     noteText : string;

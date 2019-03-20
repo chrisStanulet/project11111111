@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import {DataService} from './data.service'
 
 
 @Component({
@@ -9,7 +10,11 @@ import { Component, OnInit, Input } from '@angular/core';
 export class NotesComponent implements OnInit {
 
  noteLocation1 : string
-  constructor() { }
+    constructor(_dataService: DataService) {  
+
+        _dataService.setData( this.noteLocation1);  
+
+    }  
 
     Biology(){
       this.noteLocation1 ="Biology"

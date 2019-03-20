@@ -47,8 +47,9 @@ import {
 } from '@angular/material';
 import { NotesComponent } from './Notes View/notes/notes.component';
 import { HomeComponent } from './Home Page/home/home.component';
-import { NoteServiceService } from './note-service.service';
+
 import { NotesViewComponent } from './Notes View/notes/notes-view/notes-view.component';
+import { DataService } from './Notes View/notes/data.service';
 
 
 //app router
@@ -105,6 +106,6 @@ const appRoute = [
   
   declarations: [ AppComponent, HelloComponent, NotesComponent, HomeComponent, NotesViewComponent ],
   bootstrap:    [ AppComponent ],
-  providers: [NoteServiceService]
+  providers: [ DataService]
 })
 export class AppModule { }

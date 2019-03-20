@@ -1,4 +1,5 @@
 import { Component, Input  } from '@angular/core';
+import {DataService} from '../data.service'
 
 
 
@@ -9,12 +10,16 @@ import { Component, Input  } from '@angular/core';
 })
 export class NotesViewComponent  {
 
+  constructor(_dataService: DataService) {  
+    debugger;  
+    this.noteLocation = _dataService.getOption();  
+  }  
     noteLocation :string ;
     noteText : string;
 
     empList: Array<{noteText: string}> = []; 
 
-    constructor() {}
+
 
     onNoteCreate(){
 

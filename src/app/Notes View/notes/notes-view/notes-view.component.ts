@@ -1,5 +1,5 @@
 import { Component, Input  } from '@angular/core';
-import {DataService} from '../data.service'
+import {DataService} from '../data.service';
 
 
 
@@ -11,8 +11,7 @@ import {DataService} from '../data.service'
 export class NotesViewComponent  {
 
   constructor(public dataService: DataService) {   
-
-    this.dataService.subscribe(noteLocation => this.noteLocation = noteLocation)
+      this.noteLocation = this.dataService.getData();
       console.log(this.noteLocation)
       
     

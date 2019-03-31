@@ -9,10 +9,11 @@ import { DataService } from './data.service';
 })
 export class NotesComponent implements OnInit {
 
-
+noteLocation1:string;
     constructor(public dataService: DataService) {  
+      this.dataService.setData(noteLocation1);
     }  
- noteLocation1 : string
+
     Biology(){
       this.noteLocation1 ="Biology"
       this.dataService.setData(noteLocation1);

@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
 
+@Injectable({
+  providedIn: 'root',
+})
 export class DataService {
 
   constructor() { }
@@ -7,7 +10,7 @@ export class DataService {
   
  setData(value:string) {      
     this.data = value;  
-    console.log("set runs   " + this.data)
+    console.log("set runs. data was set to: " + this.data)
   }  
   
   getData() {  

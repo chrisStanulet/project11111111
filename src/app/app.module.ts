@@ -5,7 +5,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
-import { RouterModule, Route } from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';
+
 
 import {
   
@@ -52,20 +53,16 @@ import { NotesViewComponent } from './Notes View/notes/notes-view/notes-view.com
 import { DataService } from './Notes View/notes/data.service';
 
 
-//app router
-const appRoute = [
-  { path: 'notes', component: NotesComponent  },
-  { path: 'home', component: HomeComponent },
-  {path: 'noteView', component: NotesViewComponent}
-];
+
 
 
 
 
 @NgModule({
   imports:      [ 
-  RouterModule.forRoot(appRoute),
+
   BrowserAnimationsModule,
+  AppRoutingModule,
   BrowserModule, 
   FormsModule,   
   MatAutocompleteModule,

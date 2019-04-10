@@ -10,26 +10,28 @@ import { DataService } from './data.service';
 export class NotesComponent implements OnInit {
 
     public noteLocation1:string;
+    public dataS: DataService;
     constructor(public dataService: DataService) {  
+      this.dataS = dataService;
     }  
 
     Biology(){
-      this.noteLocation1 ="Biology"
-      this.dataService.setData(this.noteLocation1);
+      this.noteLocation1 ="Biology";
+      this.dataS.setData(this.noteLocation1);
 
     }
     History(){
-      this.noteLocation1 ="Histroy"
-      this.dataService.setData(this.noteLocation1);
+      this.noteLocation1 ="History";
+      this.dataS.setData(this.noteLocation1);
       
     }
     Maths(){
-      this.noteLocation1 ="Maths"
-      this.dataService.setData(this.noteLocation1);
+      this.noteLocation1 ="Maths";
+      this.dataS.setData(this.noteLocation1);
     }
     English(){
-      this.noteLocation1 ="English"
-      this.dataService.setData(this.noteLocation1);
+      this.noteLocation1 ="English";
+      this.dataS.setData(this.noteLocation1);
     }
 
 

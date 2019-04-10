@@ -17,20 +17,22 @@ export class NotesViewComponent  {
       
     
   }  
-    noteLocation :string ;
+    noteLocation :string;
     noteText : string;
+    noteTitle : string;
 
-    empList: Array<{noteText: string}> = []; 
+    empList: Array<{noteLocation:string, noteTitle:string ,noteText: string}> = []; 
 
 
 
     onNoteCreate(){
 
-        console.log(this.noteLocation,this.noteText);
-        this.empList.push({noteText: this.noteText });
+        console.log(this.noteTitle,this.noteLocation,this.noteText);
+        this.empList.push({ noteLocation: this.noteLocation, noteTitle:this.noteTitle, noteText: this.noteText });
         console.log(this.empList[0]) 
     
         this.noteText = "";
+        this.noteTitle = "";
     }
 
 

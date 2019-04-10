@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { DataService } from './data.service';
+import {BackService} from '../../../Back.service';
 
 
 @Component({
@@ -10,9 +11,11 @@ import { DataService } from './data.service';
 export class NotesComponent implements OnInit {
 
     public noteLocation1:string;
-    public dataS: DataService;
-    constructor(public dataService: DataService) {  
-      this.dataS = dataService;
+
+    constructor(public dataS: DataService,public OCRS :BackService) {  
+   
+
+      console.log( this.OCRS.getOCRData());
     }  
 
     Biology(){

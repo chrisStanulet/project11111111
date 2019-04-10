@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { HttpClientModule } from '@angular/common/http'; 
 import { AppComponent } from './app.component';
-import { HelloComponent } from './hello.component';
+
 import { AppRoutingModule } from './app-routing.module';
 
 
@@ -60,7 +60,7 @@ import { DataService } from './Notes View/notes/data.service';
 
 @NgModule({
   imports:      [ 
-
+  HttpClientModule,
   BrowserAnimationsModule,
   AppRoutingModule,
   BrowserModule, 
@@ -101,7 +101,7 @@ import { DataService } from './Notes View/notes/data.service';
   MatTooltipModule,
   MatTreeModule, ],
   
-  declarations: [ AppComponent, HelloComponent, NotesComponent, HomeComponent, NotesViewComponent ],
+  declarations: [ AppComponent, NotesComponent, HomeComponent, NotesViewComponent ],
   bootstrap:    [ AppComponent ],
   providers: [ DataService]
 })

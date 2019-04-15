@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http'; 
-import { AppComponent } from './app.component';
+import { AppComponent, BottomSheetOverviewExampleSheet } from './app.component';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -50,7 +50,8 @@ import { NotesComponent } from './Notes View/notes/notes.component';
 import { HomeComponent } from './Home Page/home/home.component';
 
 import { NotesViewComponent } from './Notes View/notes/notes-view/notes-view.component';
-import { DataService } from './Notes View/notes/data.service';
+import { DataService } from '../data.service';
+
 
 
 
@@ -100,8 +101,8 @@ import { DataService } from './Notes View/notes/data.service';
   MatToolbarModule,
   MatTooltipModule,
   MatTreeModule, ],
-  
-  declarations: [ AppComponent, NotesComponent, HomeComponent, NotesViewComponent ],
+  entryComponents: [AppComponent, BottomSheetOverviewExampleSheet],
+  declarations: [ AppComponent, NotesComponent, HomeComponent, NotesViewComponent,BottomSheetOverviewExampleSheet ],
   bootstrap:    [ AppComponent ],
   providers: [ DataService]
 })

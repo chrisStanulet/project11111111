@@ -1,8 +1,8 @@
 // To parse this data:
 //
-//   import { Convert, Welcome } from "./file";
+//   import { Convert, OCRtext } from "./file";
 //
-//   const welcome = Convert.toWelcome(json);
+//   const OCRtext = Convert.toOCRtext(json);
 //
 // These functions will throw an error if the JSON doesn't
 // match the expected interface, even if the JSON is valid.

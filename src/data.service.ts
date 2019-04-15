@@ -7,6 +7,7 @@ export class DataService {
 
   constructor() { }
     private data: string  
+    private notes : Array<{noteLocation:string, noteTitle:string ,noteText: string}> = []; 
   
  setData(value:string) {      
     this.data = value;  
@@ -17,5 +18,12 @@ export class DataService {
     return this.data;  
     console.log("get works")
   } 
+  addNotes(enteredNotes: Array<{noteLocation:string, noteTitle:string ,noteText: string}>){
+    this.notes = enteredNotes;
+  }
+
+  getNotes(){
+    return this.notes;
+  }
 
 }

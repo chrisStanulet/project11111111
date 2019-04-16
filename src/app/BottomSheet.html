@@ -1,10 +1,25 @@
-<mat-form-field class="example-full-width">
-  <input  matInput placeholder="Note l" value="" [(ngModel)]="noteLocation">
-</mat-form-field>
-  <mat-form-field class="example-full-width">
-    <input  matInput placeholder="Note title" value="" [(ngModel)]="noteTitle">
-  </mat-form-field>
 
+<style>
+  input{
+    width:100%
+  }
+</style>
+
+
+
+
+
+
+<mat-form-field class="example-full-width">
+  <input  matInput placeholder="Class Name" value="" [(ngModel)]="noteLocation">
+</mat-form-field>
+<br>
+  <mat-form-field class="example-full-width">
+    <input  matInput placeholder="Note Title" value="" [(ngModel)]="noteTitle">
+  </mat-form-field>
+<br>
   <mat-form-field class="example-full-width">
 <input matInput placeholder="Note Text" value="" [(ngModel)]="noteText">
   </mat-form-field>
+
+  <button mat-button color="accent"  (click)="onNoteCreate()">Add Notes</button>

@@ -12,15 +12,12 @@ import {DataService} from '../../../../data.service';
 export class NotesViewComponent  {
 
   constructor(public dataService: DataService) {   
-      this.noteLocation = this.dataService.getData();
-      console.log(this.noteLocation)
-      
-    
+      this.currentClass = this.dataService.getData();
+      this.empList = this.dataService.getNotes(); 
   }  
-    noteLocation :string;
+    currentClass :string;
     noteText : string;
     noteTitle : string;
-
     empList: Array<{noteLocation:string, noteTitle:string ,noteText: string}> = []; 
 
 

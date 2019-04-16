@@ -6,18 +6,17 @@ import { Injectable } from '@angular/core';
 export class DataService {
 
   constructor() { }
-    private data: string  
+    private class: string  
     private notes : Array<{noteLocation:string, noteTitle:string ,noteText: string}> = []; 
   
  setData(value:string) {      
-    this.data = value;  
-    console.log("set runs. data was set to: " + this.data)
+    this.class = value; 
   }  
   
   getData() {  
-    return this.data;  
-    console.log("get works")
+    return this.class;  
   } 
+  
   addNotes(enteredNotes: Array<{noteLocation:string, noteTitle:string ,noteText: string}>){
     this.notes = enteredNotes;
   }

@@ -1,11 +1,5 @@
-
-  <mat-form-field class="example-full-width">
-<input matInput placeholder="Note Text" value="" [(ngModel)]="noteText">
-  </mat-form-field>
-
-
-<button mat-button color="accent"  (click)="onNoteCreate()">Add Notes</button>
-
 <div class="note" *ngFor="let notes of empList ; let i = index"> 
-  <mat-card >{{empList[i].noteText}}</mat-card>
+  <div *ngIf="empList[i].noteLocation === currentClass">
+   <mat-card >{{empList[i].noteText}}</mat-card>
+  </div>
 </div>

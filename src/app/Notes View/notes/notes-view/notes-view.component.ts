@@ -25,17 +25,6 @@ export class NotesViewComponent  {
 
 
 
-    onNoteCreate(){
-
-        console.log(this.noteTitle,this.noteLocation,this.noteText);
-        this.empList.push({ noteLocation: this.noteLocation, noteTitle:this.noteTitle, noteText: this.noteText });
-        console.log(this.empList[0]) 
-    
-        this.noteText = "";
-        this.noteTitle = "";
-    }
-
-
 }
 
 

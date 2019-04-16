@@ -8,7 +8,7 @@ export class DataService {
   constructor() { }
     private class: string  
     private notes : Array<{noteLocation:string, noteTitle:string ,noteText: string}> = []; 
-    private classes : Array<{className:string, classPeriod:string ,token: string}> = []; 
+    private classes : Array<{className:string, classPeriod:string}> = []; 
   
  setData(value:string) {      
     this.class = value; 
@@ -26,7 +26,7 @@ export class DataService {
     return this.notes;
   }
 
-  addClases(addedClasses: Array<{className:string, classPeriod:string ,token: string}>){
+  addClases(addedClasses: Array<{className:string, classPeriod:string}>){
     this.classes=addedClasses;
   }
   getClasses(){

@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { DataService } from '../../../data.service';
 import {BackService} from '../../../Back.service';
+import { MatBottomSheet, MatBottomSheetRef } from '@angular/material';
 
 
 @Component({
@@ -8,37 +9,48 @@ import {BackService} from '../../../Back.service';
   templateUrl: './notes.component.html',
   styleUrls: ['./notes.component.css']
 })
-export class NotesComponent implements OnInit {
+export class NotesComponent {
 
-    public noteLocation1:string;
-
-    constructor(public dataS: DataService,public OCRS :BackService) {  
-   
-
-      console.log( this.OCRS.getOCRData());
+    classes:Array<{className:string, classPeriod:string }>;
+    goingTo:string
+    constructor(public dataS: DataService,private bottomSheet: MatBottomSheet,) {  
+   this.classes = this.dataS.getClasses();
     }  
 
-    Biology(){
-      this.noteLocation1 ="Biology";
-      this.dataS.setData(this.noteLocation1);
-
-    }
-    History(){
-      this.noteLocation1 ="History";
-      this.dataS.setData(this.noteLocation1);
+    routeToClass(i:number){
       
+      console.log("Off to " + this.classes[i].className)
+      this.dataS.setData(this.classes[i].className);
     }
-    Maths(){
-      this.noteLocation1 ="Maths";
-      this.dataS.setData(this.noteLocation1);
+    openBottomSheet(): void {
+      this.bottomSheet.open(ClassBottomSheet);
     }
-    English(){
-      this.noteLocation1 ="English";
-      this.dataS.setData(this.noteLocation1);
+
+}
+
+@Component({
+  selector: 'ClassBottomSheet',
+  templateUrl: './bottomSheetClasses.html',
+})
+export class ClassBottomSheet {
+  constructor(
+    private bottomSheetRef: MatBottomSheetRef<ClassBottomSheet>,
+    public dataS: DataService){this.classes= this.dataS.getClasses();}
+
+    classes:Array<{className:string, classPeriod:string}>;
+    className:string;
+    classPeriod:string;
+
+
+
+    addClasses(){
+      this.classes.push({ className:this.className, classPeriod:this.classPeriod});
+      this.dataS.addClases(this.classes);
     }
 
 
-  ngOnInit() {
+  openLink(event: MouseEvent): void {
+    this.bottomSheetRef.dismiss();
+    event.preventDefault();
   }
-
 }

@@ -29,8 +29,12 @@ export class AppComponent {
 export class BottomSheetOverviewExampleSheet {
   constructor(
     private bottomSheetRef: MatBottomSheetRef<BottomSheetOverviewExampleSheet>,
-    public dataS: DataService){this.notes= this.dataS.getNotes();}
+    public dataS: DataService){
+      this.notes= this.dataS.getNotes();
+      this.classes = this.dataS.getClasses();
+    }
 
+    classes:Array<{className:string, classPeriod:string}>;
     notes:Array<{noteLocation:string, noteTitle:string ,noteText: string}>;
     noteLocation:string;
     noteText:string;

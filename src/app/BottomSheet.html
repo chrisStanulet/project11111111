@@ -1,8 +1,13 @@
 
 <style>
-  input{
-    width:100%
-  }
+mat-form-field {
+  display: flex;
+  flex-direction: column;
+}
+
+mat-form-field > * {
+  width: 100%;
+}
 </style>
 
 
@@ -11,7 +16,11 @@
 
 
 <mat-form-field class="example-full-width">
-  <input  matInput placeholder="Class Name" value="" [(ngModel)]="noteLocation">
+  <mat-select placeholder="Select a Class" [(ngModel)]="noteLocation">
+    <div *ngFor="let class of classes ; let i = index">
+      <mat-option value="option">{{classes[i].className}}</mat-option>
+    </div>
+  </mat-select>
 </mat-form-field>
 <br>
   <mat-form-field class="example-full-width">
@@ -19,7 +28,7 @@
   </mat-form-field>
 <br>
   <mat-form-field class="example-full-width">
-<input matInput placeholder="Note Text" value="" [(ngModel)]="noteText">
+<textarea matInput placeholder="Note Text" value="" [(ngModel)]="noteText"></textarea>
   </mat-form-field>
 
   <button mat-button color="accent"  (click)="onNoteCreate()">Add Notes</button>

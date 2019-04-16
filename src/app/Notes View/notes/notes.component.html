@@ -1,5 +1,6 @@
-<mat-card [routerLink]="['/noteView']" (click)="History()">History</mat-card>
-<mat-card [routerLink]="['/noteView']" (click)="Biology()">Biology</mat-card>
-<mat-card [routerLink]="['/noteView']" (click)="Maths()">Math</mat-card>
-<mat-card [routerLink]="['/noteView']" (click)="English()">English</mat-card>
 
+<mat-card  (click)="openBottomSheet()">Add class</mat-card>
+
+<div *ngFor="let class of classes ; let i = index"> 
+     <mat-card (click)="routeToClass(i)" routerLink="/noteView">{{classes[i].className}}</mat-card>
+</div>

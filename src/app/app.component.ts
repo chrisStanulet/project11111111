@@ -47,9 +47,7 @@ export class BottomSheetOverviewExampleSheet {
       this.noteText = "";
       this.noteTitle = "";
   }
-  changeClass(data){
-    alert("selected --->"+data);
-  }
+
 
   openLink(event: MouseEvent): void {
     this.bottomSheetRef.dismiss();

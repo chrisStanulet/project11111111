@@ -14,11 +14,10 @@ mat-form-field > * {
 
 
 
-
-<mat-form-field class="example-full-width">
-  <mat-select placeholder="Select a Class" [(ngModel)]="noteLocation">
-    <div *ngFor="let class of classes ; let i = index">
-      <mat-option value="option">{{classes[i].className}}</mat-option>
+<mat-form-field class="example-full-width" >
+  <mat-select placeholder="Select a Class" [(ngModel)]="noteLocation" >
+    <div *ngFor="let class of classes ; let i = index" >
+      <mat-option  [value]="classes[i].className" >{{classes[i].className}}</mat-option>
     </div>
   </mat-select>
 </mat-form-field>

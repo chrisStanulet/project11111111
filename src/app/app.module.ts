@@ -47,9 +47,9 @@ import {
   MatTreeModule,
 } from '@angular/material';
 import { NotesComponent, ClassBottomSheet } from './Notes View/notes/notes.component';
-import { HomeComponent } from './Home Page/home/home.component';
+import { AssignmentComponent } from './Assignment Page/assignments/assignment.component';
 
-import { NotesViewComponent } from './Notes View/notes/notes-view/notes-view.component';
+import { NotesViewComponent } from './Notes View/notes-view/notes-view.component';
 import { DataService } from '../data.service';
 
 
@@ -102,7 +102,7 @@ import { DataService } from '../data.service';
   MatTooltipModule,
   MatTreeModule, ],
   entryComponents: [AppComponent, BottomSheetOverviewExampleSheet,ClassBottomSheet,NotesComponent],
-  declarations: [ AppComponent, NotesComponent, HomeComponent, NotesViewComponent,BottomSheetOverviewExampleSheet,ClassBottomSheet],
+  declarations: [ AppComponent, NotesComponent, AssignmentComponent, NotesViewComponent,BottomSheetOverviewExampleSheet,ClassBottomSheet],
   bootstrap:    [ AppComponent ],
   providers: [ DataService]
 })

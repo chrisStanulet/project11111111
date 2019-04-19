@@ -1,5 +1,12 @@
 <div class="note" *ngFor="let notes of empList ; let i = index"> 
   <div *ngIf="empList[i].noteLocation === currentClass">
-   <mat-card >{{empList[i].noteText}}</mat-card>
+   <mat-card">
+     <mat-card-content>
+       {{empList[i].noteText}} 
+      </mat-card-content>
+     <mat-card-actions *ngIf="true===true">
+       <button mat-button color="accent" (click)="deleteNote(i)">Delete</button>
+    </mat-card-actions>  
+  </mat-card>
   </div>
 </div>

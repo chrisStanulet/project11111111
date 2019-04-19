@@ -55,7 +55,8 @@ import { AssignmentComponent } from './Assignment Page/assignments/assignment.co
 
 import { NotesViewComponent } from './Notes View/notes-view/notes-view.component';
 import { DataService } from '../data.service';
-import { FlashcardsComponent } from './flashcards/flashcards.component';
+import { CreateComponent } from './Flashcards Page/create/create.component';
+import { ViewComponent } from './Flashcards Page/view/view.component'
 
 
 
@@ -113,7 +114,7 @@ import { FlashcardsComponent } from './flashcards/flashcards.component';
   MatTooltipModule,
   MatTreeModule, ],
   entryComponents: [AppComponent, BottomSheetOverviewExampleSheet,ClassBottomSheet,NotesComponent],
-  declarations: [ AppComponent, NotesComponent, AssignmentComponent, NotesViewComponent,BottomSheetOverviewExampleSheet,ClassBottomSheet, FlashcardsComponent],
+  declarations: [ AppComponent, NotesComponent, AssignmentComponent, NotesViewComponent,BottomSheetOverviewExampleSheet,ClassBottomSheet, CreateComponent,ViewComponent],
   bootstrap:    [ AppComponent ],
   providers: [ DataService]
 })

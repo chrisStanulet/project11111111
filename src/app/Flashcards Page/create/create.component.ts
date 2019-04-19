@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'my-app-flashcards',
-  templateUrl: './flashcards.component.html',
-  styleUrls: ['./flashcards.component.css']
+  templateUrl: './create.component.html',
+  styleUrls: ['./create.component.css']
 })
-export class FlashcardsComponent implements OnInit {
+export class CreateComponent implements OnInit {
 
   constructor() { }
 

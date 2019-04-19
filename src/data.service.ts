@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { CalendarEvent } from 'angular-calendar';
 
 @Injectable({
   providedIn: 'root',
@@ -6,6 +7,7 @@ import { Injectable } from '@angular/core';
 export class DataService {
 
   constructor() { }
+    private events: CalendarEvent[] =[];
     private class: string  
     private notes : Array<{noteLocation:string, noteTitle:string ,noteText: string}> = []; 
     private classes : Array<{className:string, classPeriod:string}> = []; 
@@ -31,6 +33,14 @@ export class DataService {
   }
   getClasses(){
 return this.classes;
+  }
+
+  setAssignments(assignments:CalendarEvent[]){
+    this.events = assignments;
+  }
+
+  getAssignemtns(){
+    return this.events;
   }
 
 }

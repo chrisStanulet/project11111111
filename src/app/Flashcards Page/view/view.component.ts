@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {DataService} from '../../../data.service'
 
 @Component({
   selector: 'my-app-view',
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewComponent implements OnInit {
 
-  constructor() { }
+  flashcards:Array<{term:string, description:string}>[];
+
+  constructor(public dataS:DataService) { }
+  
 
   ngOnInit() {
   }

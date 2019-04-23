@@ -1,6 +1,6 @@
 <div class="note" *ngFor="let notes of empList ; let i = index"> 
   <div *ngIf="empList[i].noteLocation === currentClass">
-   <mat-card">
+   <mat-card>
      <mat-card-content>
        {{empList[i].noteText}} 
       </mat-card-content>

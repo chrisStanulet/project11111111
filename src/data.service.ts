@@ -11,6 +11,8 @@ export class DataService {
     private class: string  
     private notes : Array<{noteLocation:string, noteTitle:string ,noteText: string}> = []; 
     private classes : Array<{className:string, classPeriod:string}> = []; 
+    private flashcards : Array<{term:string, definition:string}> = []; 
+  
   
  setData(value:string) {      
     this.class = value; 
@@ -41,6 +43,13 @@ return this.classes;
 
   getAssignemtns(){
     return this.events;
+  }
+
+  addFlashcards(addedCards:Array<{term:string, definition:string}>){
+    this.flashcards=addedCards;
+  }
+  getFlashcards(){
+    return this.flashcards;
   }
 
 }

@@ -1,6 +1,5 @@
 import { Component, Input  } from '@angular/core';
 import {DataService} from '../../../data.service';
-import { EmptyError } from 'rxjs';
 
 
 
@@ -22,7 +21,8 @@ export class NotesViewComponent  {
     empList: Array<{noteLocation:string, noteTitle:string ,noteText: string}> = []; 
 
 deleteNote(noteToDelete:number){
-  this.empList.splice(noteToDelete);
+  console.log(noteToDelete)
+  this.empList.splice(noteToDelete,1);
 }
 }
 

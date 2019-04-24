@@ -31,3 +31,9 @@ mat-form-field > * {
   </mat-form-field>
 
   <button mat-button color="accent"  (click)="onNoteCreate()">Add Notes</button>
+  <button mat-button color="accent" (click)="getOCR()">Or Use a Picture</button>
+  <div class="form-group">
+    <input mat-button type="file"
+           id="file"
+           (change)="handleFileInput($event.target.files)">
+</div>

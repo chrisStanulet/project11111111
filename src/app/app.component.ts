@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MatBottomSheet, MatBottomSheetRef } from '@angular/material';
 import { DataService } from '../data.service';
+import {BackService} from "../Back.service"
 
 
 
@@ -46,6 +47,9 @@ export class BottomSheetOverviewExampleSheet {
       this.dataS.addNotes(this.notes);
       this.noteText = "";
       this.noteTitle = "";
+  }
+  getOCR(){
+    console.log("this does")
   }
 
 

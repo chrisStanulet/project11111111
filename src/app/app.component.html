@@ -2,7 +2,7 @@
 <mat-toolbar class="header" color="primary">
   Project Name!!1!
   <div class="filler"></div>
-    <button mat-mini-fab color="accent" class="editButtons" (click)="openBottomSheet()" >+</button><!-- add -->
+    <button mat-mini-fab color="accent" class="editButtons" matTooltip="Create" (click)="openBottomSheet()" >+</button><!-- add -->
     <button mat-mini-fab color="accent" class="editButtons" ></button><!-- delete -->
     <!--<button mat-mini-fab color="accent" class="editButtons" ></button>-->
 </mat-toolbar>
@@ -11,7 +11,7 @@
   <mat-sidenav  mode="side" opened>
 
     <!-- Nav buttons -->
-    <button mat-flat-button class ="navButtons" color='accent' routerLink="/assignemnts">Assignemnts</button>
+    <button mat-flat-button class ="navButtons" color='accent' routerLink="/assignemnts">Assignments</button>
     <br>
      <button mat-flat-button class="navButtons" color='accent' routerLink="/notes">Notes</button>
     <br>

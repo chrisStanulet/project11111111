@@ -5,6 +5,9 @@ import {BackService} from "../Back.service"
 
 
 
+class ImageSnippet {
+  constructor(public src: string, public file: File) {}
+}
 
 @Component({
   selector: 'my-app',
@@ -30,9 +33,10 @@ export class AppComponent {
 export class BottomSheetOverviewExampleSheet {
   constructor(
     private bottomSheetRef: MatBottomSheetRef<BottomSheetOverviewExampleSheet>,
-    public dataS: DataService){
+    public dataS: DataService,      private ocr: BackService){
       this.notes= this.dataS.getNotes();
       this.classes = this.dataS.getClasses();
+
     }
 
     classes:Array<{className:string, classPeriod:string}>;
@@ -48,10 +52,29 @@ export class BottomSheetOverviewExampleSheet {
       this.noteText = "";
       this.noteTitle = "";
   }
-  getOCR(){
-    console.log("this does")
-  }
+  selectedFile: ImageSnippet;
 
+
+  processFile(imageInput: any) {
+    const file: File = imageInput.files[0];
+    const reader = new FileReader();
+
+    reader.addEventListener('load', (event: any) => {
+
+      this.selectedFile = new ImageSnippet(event.target.result, file);
+
+      this.imageService.uploadImage(this.selectedFile.file).subscribe(
+        (res) => {
+        
+        },
+        (err) => {
+        
+        })
+    });
+
+    reader.readAsDataURL(file);
+  }
+}
 
   openLink(event: MouseEvent): void {
     this.bottomSheetRef.dismiss();

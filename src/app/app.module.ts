@@ -11,6 +11,7 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { AppRoutingModule } from './app-routing.module';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { FlatpickrModule } from 'angularx-flatpickr';
+import { MatFileUploadModule } from 'angular-material-fileupload';
 
 import {
   
@@ -68,6 +69,7 @@ import { ViewComponent } from './Flashcards Page/view/view.component'
 @NgModule({
   imports:      [ 
   HttpClientModule,
+  MatFileUploadModule,
   NgbModalModule,
   CommonModule,
   CalendarModule.forRoot({

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import {Http} from '@angular/http';
+import { HttpClient, HttpEvent, HttpErrorResponse, HttpEventType } from  '@angular/common/http';
+import { map } from  'rxjs/operators';
 import {OCRtext} from './OCRtext';
 import { Observable } from 'rxjs';
 
@@ -10,15 +11,14 @@ import { Observable } from 'rxjs';
 })
 export class BackService {
 
-  constructor(private http: Http) {}
+  constructor(private httpClient: HttpClient) { }
 
+  SERVER_URL: string = "http://127.0.0.1:8000/";
 
-  public uploadImage(image: File): Observable<Response> {
-    const formData = new FormData();
-
-    formData.append('image', image);
-
-    return this.http.post('/api/v1/image-upload', formData);
+  public uploadFile(data) {
+    let uploadURL = `${this.SERVER_URL}/upload.php`;
+    return this.httpClient.post<any>(uploadURL, data);
   }
-
+  
 }
+

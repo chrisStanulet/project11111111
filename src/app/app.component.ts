@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { MatBottomSheet, MatBottomSheetRef } from '@angular/material';
 import { DataService } from '../data.service';
 import {BackService} from "../Back.service"
-
+import { FormBuilder, FormGroup } from  '@angular/forms';
 
 
 class ImageSnippet {
@@ -33,12 +33,14 @@ export class AppComponent {
 export class BottomSheetOverviewExampleSheet {
   constructor(
     private bottomSheetRef: MatBottomSheetRef<BottomSheetOverviewExampleSheet>,
-    public dataS: DataService,      private ocr: BackService){
+    public dataS: DataService,      private ocr: BackService,private formBuilder: FormBuilder){
       this.notes= this.dataS.getNotes();
       this.classes = this.dataS.getClasses();
 
     }
-
+    form: FormGroup;
+    uploadResponse;
+  
     classes:Array<{className:string, classPeriod:string}>;
     notes:Array<{noteLocation:string, noteTitle:string ,noteText: string}>;
     noteLocation:string;
@@ -52,33 +54,38 @@ export class BottomSheetOverviewExampleSheet {
       this.noteText = "";
       this.noteTitle = "";
   }
-  selectedFile: ImageSnippet;
 
-
-  processFile(imageInput: any) {
-    const file: File = imageInput.files[0];
-    const reader = new FileReader();
-
-    reader.addEventListener('load', (event: any) => {
-
-      this.selectedFile = new ImageSnippet(event.target.result, file);
-
-      this.imageService.uploadImage(this.selectedFile.file).subscribe(
-        (res) => {
-        
-        },
-        (err) => {
-        
-        })
-    });
-
-    reader.readAsDataURL(file);
+  onFileSelect(event) {
+    if (event.target.files.length > 0) {
+      const file = event.target.files[0];
+      this.form.get('avatar').setValue(file);
+    }
   }
-}
 
+  onSubmit() {
+    const formData = new FormData();
+    formData.append('avatar', this.form.get('avatar').value);
+
+    this.ocr.uploadFile(formData).subscribe(
+      (res) => {
+        this.uploadResponse = res;
+          console.log(res);
+      },
+      (err) => {  
+        console.log(err);
+      }
+    );
+  }
   openLink(event: MouseEvent): void {
     this.bottomSheetRef.dismiss();
     event.preventDefault();
+  }
+
+
+  ngOnInit() {
+    this.form = this.formBuilder.group({
+      avatar: ['']
+    });
   }
 }
 

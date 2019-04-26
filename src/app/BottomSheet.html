@@ -32,15 +32,13 @@ mat-form-field > * {
 
   <button mat-button color="accent"  (click)="onNoteCreate()">Add Notes</button>
 
-  
-  <label for="singleFile">Upload file</label>
+<div>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
 
-<label class="image-upload-container btn btn-bwm">
-    <span>Select Image</span>
-    <input #imageInput
-           type="file"
-           accept="image/*"
-           (change)="processFile(imageInput)">
-  </label>
+    <input  type="file" name="avatar" (change)="onFileSelect($event)" />
+    <button mat-button color="accent" type="submit">Upload</button>
+
+  </form>
+</div>
 
  

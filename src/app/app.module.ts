@@ -5,6 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http'; 
 import { AppComponent, BottomSheetOverviewExampleSheet } from './app.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
@@ -69,6 +71,7 @@ import { ViewComponent } from './Flashcards Page/view/view.component'
 @NgModule({
   imports:      [ 
   HttpClientModule,
+  ReactiveFormsModule,
   MatFileUploadModule,
   NgbModalModule,
   CommonModule,

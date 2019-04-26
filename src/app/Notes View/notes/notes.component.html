@@ -1,6 +1,6 @@
 
-<mat-card  (click)="openBottomSheet()">Add class</mat-card>
+<mat-card class="add" (click)="openBottomSheet()">Add class</mat-card>
 
 <div *ngFor="let class of classes ; let i = index"> 
-     <mat-card (click)="routeToClass(i)" routerLink="/noteView">{{classes[i].className}}</mat-card>
+     <mat-card (click)="routeToClass(i)" routerLink="/noteView">{{classes[i].className}}<br><span class="period">Period {{classes[i].classPeriod}}</span> </mat-card>
 </div>

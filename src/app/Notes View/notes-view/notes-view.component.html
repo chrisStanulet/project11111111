@@ -2,11 +2,13 @@
   <div *ngIf="empList[i].noteLocation === currentClass">
    <mat-card>
      <mat-card-content>
-       {{empList[i].noteText}} 
+      {{empList[i].noteTitle}}
+      |
+      {{empList[i].noteText}} 
       </mat-card-content>
-     <mat-card-actions *ngIf="true===true">
-       <button mat-button color="accent" (click)="deleteNote(i)">Delete</button>
-    </mat-card-actions>  
+     <mat-card-actions >
+       <button  mat-button color="warn" (click)="deleteNote(i)">Delete</button>
+    </mat-card-actions>   
   </mat-card>
   </div>
 </div>

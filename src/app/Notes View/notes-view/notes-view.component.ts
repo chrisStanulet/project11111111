@@ -14,7 +14,8 @@ export class NotesViewComponent  {
   constructor(public dataService: DataService) {   
       this.currentClass = this.dataService.getData();
       this.empList = this.dataService.getNotes(); 
-  }  
+  } 
+
     currentClass :string;
     noteText : string;
     noteTitle : string;

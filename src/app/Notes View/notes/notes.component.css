@@ -5,3 +5,11 @@ mat-card{
   height:150px;
   text-align: center;
 }
+.add{
+  background-color: transparent;
+  border:2px dashed white;
+  color:white
+}
+.period{
+  color:#666;
+}

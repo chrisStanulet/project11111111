@@ -13,12 +13,12 @@ export class BackService {
 
   constructor(private httpClient: HttpClient) { }
 
-  SERVER_URL: string = "http://127.0.0.1:8000/";
+  SERVER_URL: string = "http://10.40.4.114/";
 
   public uploadFile(data) {
-    let uploadURL = `${this.SERVER_URL}/upload.php`;
-    return this.httpClient.post<any>(uploadURL, data);
+    let uploadURL = `${this.SERVER_URL}backend/vision/OCR/`;
+    return this.httpClient.post<OCRtext>(uploadURL, data);
   }
-  
+
 }
 

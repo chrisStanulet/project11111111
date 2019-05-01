@@ -19,6 +19,5 @@ export class BackService {
     let uploadURL = `${this.SERVER_URL}backend/vision/OCR/`;
     return this.httpClient.post<OCRtext>(uploadURL, data);
   }
-
 }
 

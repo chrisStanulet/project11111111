@@ -1,9 +1,8 @@
 
 <mat-toolbar class="header">
-  Project Name!!1!
   <div class="filler"></div>
     <button mat-mini-fab color="accent" class="editButtons" matTooltip="Create" (click)="openBottomSheet()" >+</button><!-- add -->
-    <button mat-mini-fab color="accent" class="editButtons" ></button><!-- delete -->
+    <button mat-mini-fab color="accent" class="editButtons" matTooltip="Profile"></button><!-- delete -->
     <!--<button mat-mini-fab color="accent" class="editButtons" ></button>-->
 </mat-toolbar>
 
@@ -11,12 +10,12 @@
   <mat-sidenav  mode="side" opened>
 
     <!-- Nav buttons -->
-    <button mat-flat-button class ="navButtons" color='accent' routerLink="/assignemnts">Assignments</button>
+    <button mat-flat-button class ="navButtons" color='accent' routerLink="/assignemnts" matTooltip="Assignments">Assignments</button>
     <br>
-     <button mat-flat-button class="navButtons" color='accent' routerLink="/notes">Notes</button>
+     <button mat-flat-button class="navButtons" color='accent' routerLink="/notes" matTooltip="Notes">Notes</button>
     <br>
-     <!--<button mat-flat-button class="navButtons" color='accent' routerLink="/FCardCreate">Flashcards</button>-->
-  
+    <!-- <button mat-flat-button class="navButtons" color='accent' routerLink="/FCardCreate">Flashcards</button>
+    -->
   </mat-sidenav>
   <mat-sidenav-content>
     <!-- shows views on button press -->

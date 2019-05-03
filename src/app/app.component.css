@@ -31,10 +31,13 @@ mat-sidenav {
  }
 
  .navButtons {
-
-   height: 13%;
-   width: 99%;
+   height: 15%;
+   width: 98%;
    word-wrap:break-word;
    border-bottom: 3px solid #424242;
-  border-top: 3px solid #424242;
+   border-top: 3px solid #424242;
+   border-radius: 50%;
+ }
+ .navButtons:hover {
+   background-color: #52eea1;
  }
